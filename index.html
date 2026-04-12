@@ -1,19 +1,222 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>My CS-499 ePortfolio Thao</title>
-  </head>
-  <style>
-  h1, h2, h3, h4, h5, h6 {
-    font-size: 30px; /* Set your preferred uniform size */
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-</style>
-  <body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .line-left {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #FFA07A);
+        }
+
+        .line-right {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to left, transparent, #FFA07A);
+        }
+
+        .divider span {
+            padding: 0 15px;
+            color: #FFA07A;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .subheading {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #FFA07A;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
     <header style="background-color:#FFA07A; color:white; padding:20px; text-align:center;">
-    <h1>My CS-499 ePortfolio Thao</h1>
-    <p>Welcome to my GitHub Pages ePortfolio!</p>
-  </body>
+        <h1>My CS-499 ePortfolio</h1>
+        <p>Samantha Thao</p>
+    </header>
+
+    <div class="section">
+        <div class="divider">
+            <div class="line-left"></div>
+            <span>About My ePortfolio</span>
+            <div class="line-right"></div>
+        </div>
+        <p>
+            To-Do: Add Professional Self Assessment!
+        </p>
+
+
+    </div>
+
+
+    <div class="section">
+        <div class="divider">
+            <div class="line-left"></div>
+            <span>Initial Artifact</span>
+            <div class="line-right"></div>
+        </div>
+        <p>
+            The artifact is a multiplayer open-world survival game that I am building with a team in Unreal Engine using both C++ and Blueprints. The game features exploration, unique combat, character abilities, and an inventory system to enhance gameplay. The project was created from scratch about a year ago, and the existing code has been programmed by me thus far, while the rest of the team focuses on graphics, level design, and animations. The most important artifact files for this enhancement are the inventory system, which adds new functionality and improves gameplay logic.
+        </p>
+        <div class="subheading">Initial Code Files</div>
+        <ul>
+            <li><strong>Item Types</strong>
+                <ul>
+                    <li><a href="Source/Public/OriginalItemTypes.h" target="_blank">OriginalItemTypes (.h)</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </div>
+
+    <div class="section">
+        <div class="divider">
+            <div class="line-left"></div>
+            <span>Code Review Video</span>
+            <div class="line-right"></div>
+        </div>
+
+        <div style="text-align:center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/n9D4K-LghTw" title="Project Demo" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <div class="divider">
+            <div class="line-left"></div>
+            <span>Software Design and Engineering</span>
+            <div class="line-right"></div>
+        </div>
+
+        <div class="subheading">Narrative</div>
+
+        <p>I selected this artifact because it strongly represents my growth in software design and development. The files I enhanced are important for the software design and engineering category because they show object-oriented programming and a modular design. The system was built so that functions can be reused and expanded in the future, making it easier to maintain and improve later. I selected this item because it shows my ability to work across multiple class types, like Enums, structs, actors, and actor components. It also shows that I can properly declare and assign properties, initialize and validate pointers, and build functions with fitting parameters. Another skill is my ability to adapt to Unreal Engine's coding standards and use its header tools. </p>
+        <p>The artifact was improved in many ways. It originally started with just the Item Types file, which only contained an Enum class for item types. From there, I worked on my item class files and restructured the small Enum class for the item states. This made the Item files clean and allowed me to focus on the new inventory component files. I improved the system by creating variables and functions that can be used with the base character to add an inventory component that consists of a set number of slots and a hot bar. From there, I was able to make functions that can add and delete items from the inventory. Some of the functions access functions on the other new files, such as clearing inventory slots, but I felt as though these files can be used for other sections and have not included them for this enhancement. </p>
+
+        <p>Working on this enhancement taught me a lot about building a system from the ground up and improving my code quality over time. Starting with mostly blank files made it easy to build everything step by step for the Item Types files. I learned how to better use pointers and forward declarations, and proper variable validation before accessing data. I also became more familiar with Unreal Engine's coding standards and proper naming conventions.
+        </p>
+        <p>One of the challenges I faced was figuring out how much commenting to include. I wanted the code to be clear and readable without adding unnecessary comments. Another challenge I struggled with was getting the add and delete functions to work correctly. They weren’t working correctly at first because I forgot to call them in my base character class when picking up items. This led to some debugging and the use of UE_LOG statements to track the issue. Once I targeted the problem, I removed the extra debug logs to keep the code clean. Lastly, I made sure that I kept the code scalable since my team and I plan to add more features later. I chose to focus on making the core system stronger before building more.
+        </p>
+
+        <div class="subheading">Artifact Code Files</div>
+        <ul>
+            <li><strong>Item</strong>
+                <ul>
+                    <li><a href="Source/Public/Item.h" target="_blank">Item (.h)</a></li>
+                    <li><a href="Source/Private/Item.cpp" target="_blank">Item (.cpp)</a></li>
+                </ul>
+            </li>
+
+            <li><strong>Item Types</strong>
+                <ul>
+                    <li><a href="Source/Public/ItemTypes.h" target="_blank">ItemTypes (.h)</a></li>
+                </ul>
+            </li>
+
+            <li><strong>Inventory Component</strong>
+                <ul>
+                    <li><a href="Source/Public/InventoryComp.h" target="_blank">InventoryComp (.h)</a></li>
+                    <li><a href="Source/Private/InventoryComp.cpp" target="_blank">InventoryComp (.cpp)</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="section">
+        <div class="divider">
+            <div class="line-left"></div>
+            <span>Algorithms and Data Structures</span>
+            <div class="line-right"></div>
+        </div>
+        <div class="subheading">Narrative</div>
+        <p>
+            I selected this artifact because it strongly represents my growth in algorithms and data structures. The files I have included first started as only one file, the Item Types header file. I expanded the program by implementing the Inventory component and Inventory slot structures, making the system more advanced. These additions showcase my ability to work with diverse data types and custom structures, as well as to use algorithms to modify the inventory array. In the Inventory Slot header, I created a struct that stores the item definition and the item quantity. I then also use dynamic TArrays in the Inventory Comp header to manage the inventory and hot bar slots. </p>
+        <p>In the Inventory Comp header and source file, I use algorithms to manipulate the data structures. My functions for adding and removing items implement linear searches, stacking behavior, and conditional logic. I also implemented logic to prepare the arrays for use and index techniques to find empty slots and validate the space available before trying to insert items. This shows my ability to efficiently manage and manipulate array data. </p>
+        <p>The artifact has been greatly improved from its original state, as the entire project consisted of a base item class and the item types header file. From those two files, I was able to initialize the start of a fully functional inventory system, making for a strong foundation I will be able to build upon. </p>
+        <p>Modifying this artifact was more difficult at first, as it did not create the helper functions right away. I had redundant code at first when I could have saved space and time. I also had to decide if I wanted to create an entire source file to hold the helper function logic or just keep them in the header file to reduce the number of files until I create more complex code inside the inventory slot file. I also struggled with the inventory component, as I wanted to add more functionality for dealing with the array. To keep the project scalable and not expand it beyond what I had time for, I cut out some of my plans and decided to clean up what I had after week three’s submission. This caused some challenges as I had to cut back on original plans and make new ones.
+
+        </p>
+
+        <div class="subheading">Artifact Code Files</div>
+        <ul>
+            <li><strong>Inventory Slot</strong>
+                <ul>
+                    <li><a href="Source/Public/InventorySlot.h" target="_blank">InventorySlot (.h)</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </div>
+
+    <div class="section">
+        <div class="divider">
+            <div class="line-left"></div>
+            <span>Databases</span>
+            <div class="line-right"></div>
+        </div>
+        <div class="subheading">Narrative</div>
+        <p>
+            For the Database enhancement, I chose these three files as they showcase my growth when creating and working with SQLite and database queries. The Item Def file showcases my ability to create a structured data model from scratch to provide definitions of each item that will be used in the game. I also created and initialized the variables to default values to reduce potential errors later in development. The Inventory DB header and source file demonstrate my ability to work with database creation and save/load functionality. In the header file, I defined functions to work with the database, from opening/closing, saving/loading, creating the table for storage, and a finding item helper function.</p>
+        <p>Then, in the DB source file, I work on creating the logic for each of the functions. For example, the open database function works by creating the file in the project's saved directory. I then used multiple conditional checks to ensure that if the database is not open properly or created, there are UE error log messages displayed for testing and debugging purposes. These functions showcase my ability to connect gameplay systems with data storage. They also show that I can organize code and define item data while working with database operations. </p>
+        <p>The overall artifact had massive improvements as the files were created throughout the duration of the course. From blank files, I was able to implement functionality for reading, opening, along with updating, and removing data. This artifact also allowed me to move forward within the game engine and make the inventory display icons related to each item stored. </p>
+
+
+
+        <p>The process of enhancing this artifact was a learning process I struggled with. After only taking one database course very early in my courses, I struggled with remembering the information. This led to extensive research, as Unreal Engine also uses a particular format for its coding standards as well. This made creating the database files a little trickier than the rest, as I wanted to ensure I was properly querying the database. After finding official documentation from Unreal Engine, I had to read and learn about the specific includes and wrappers, such as the FSQLitePreparedStatement, to ensure I was using them properly. Thanks to Unreal's extensive documentation, I can now use the knowledge to continue advancing the database files and make more in the future for the characters' saved stats or abilities.
+        </p>
+
+        <div class="subheading">Artifact Code Files</div>
+        <ul>
+            <li><strong>Item Def</strong>
+                <ul>
+                    <li><a href="Source/Public/ItemDef.h" target="_blank">ItemDef (.h)</a></li>
+                </ul>
+            </li>
+
+            <li><strong>Inventory DB</strong>
+                <ul>
+                    <li><a href="Source/Public/InventoryDB.h" target="_blank">InventoryDB (.h)</a></li>
+                </ul>
+                <ul>
+                    <li><a href="Source/Private/InventoryDB.cpp" target="_blank">InventoryDB (.cpp)</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
 </html>
